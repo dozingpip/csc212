@@ -1,0 +1,247 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=.85in]{geometry}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+
+\graphicspath{ {images/} }
+\setlength{\parindent}{0pt}
+\setlength{\fboxsep}{10pt}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+    backgroundcolor=\color{white},   % choose the background color
+    basicstyle=\footnotesize,        % size of fonts used for the code
+    breaklines=true,                 % automatic line breaking only at whitespace
+    commentstyle=\color{mygreen},    % comment style
+    keywordstyle=\color{blue},       % keyword style
+    stringstyle=\color{mymauve},     % string literal style
+}
+% --------------------------------------------------------------------------
+% --------------------------------------------------------------------------
+% --------------------------------------------------------------------------
+\begin{document}
+
+% --------------------------------------------------------------------------
+\begin{center}
+{\Large\bf CSC 212: Data Structures and Abstractions}\\
+\medskip
+{\Large\bf University of Rhode Island}\\
+\bigskip
+{\Large\bf Problem Set 02 (Fall 2016)}
+\end{center}
+
+% --------------------------------------------------------------------------
+\bigskip
+\fbox{\parbox{6.5in}{
+    \vspace{12pt}
+    \textbf{\large Stephanie Donnelly}
+    \vspace{12pt}
+}}
+\bigskip
+
+% --------------------------------------------------------------------------
+% --------------------------------------------------------------------------
+% --------------------------------------------------------------------------
+\begin{enumerate}[leftmargin=*]
+
+    % problem 1
+    % --------------------------------------------------------------------------
+    \item
+
+    \begin{enumerate}
+	%a
+        \item
+	\begin{align*}
+           O(nlogn)\\
+    	\end{align*}
+
+	%b
+        \item
+	\begin{align*}
+            O(n)\\
+    	\end{align*}
+
+	%c
+        \item
+	\begin{align*}
+            O(n2^n)\\
+    	\end{align*}
+
+	%d
+        \item
+	\begin{align*}
+            O(n2^n)\\
+    	\end{align*}
+
+	%e
+        \item
+	\begin{align*}
+            O(logn)\\
+    	\end{align*}
+
+	%f
+        \item
+	\begin{align*}
+            O(n^2)\\
+    	\end{align*}
+	\end{enumerate}
+    % problem 2
+    % --------------------------------------------------------------------------
+    \item {\it }
+	\begin{align*}
+        O(logn)\\
+    	\end{align*}
+
+    % problem 3
+    % --------------------------------------------------------------------------
+    \item {\it }
+
+	\includegraphics{prob3.jpg}
+
+    % problem 4
+    % --------------------------------------------------------------------------
+    \item {\it }
+
+    \verb|listings| environment:
+    \begin{lstlisting}[language=C++]
+        long int tribonacci(int n) {
+            long int current = 0;
+            long int prev= 0;
+            long int prev_prev = 0;
+            for(int i = 0; i<n; i++){
+                current = num;
+                num = current + prev + prev_prev;
+                prev  = num;
+                prev_prev = num - prev;
+            }
+        }
+    \end{lstlisting}
+
+    % problem 5
+    % --------------------------------------------------------------------------
+    \item {\it }
+
+    \verb|listings| environment:
+    \begin{lstlisting}[language=C++]
+        void reverse(char *str, int n) {
+            for(int i = 0; i<n/2; i++){
+                char temp = *str;
+                *str = *(str-i)
+                *(str-i) = temp;
+            }
+        }
+    \end{lstlisting}
+
+    % problem 6
+    % --------------------------------------------------------------------------
+    \item {\it }
+
+    \verb|listings| environment:
+    \begin{lstlisting}[language=C++]
+                void reverse(char *str, int n) {
+            for(int i = 0; i<n/2; i++){
+                char temp = *str;
+                *str = *(str-i)
+                *(str-i) = temp;
+            }
+        }
+
+        int palindrome(char *str, int n) {
+            string s = " ";
+            while(*str != '\0'){
+                s +=*str;
+                str++;
+            }
+            int mid = strlen(s)/2;
+            if(strlen(s)%2 ==1){
+                mid++;
+            }
+            string half2 = reverse(s.substr(mid) //get from midpoint on and reverse that
+            string half1 = s.substr(0, mid);
+            if(half1 == half2){
+                return 1;
+            }else{
+                return 0;
+            }
+        }
+    \end{lstlisting}
+
+    % problem 7
+    % --------------------------------------------------------------------------
+    \item {\it }
+
+    \verb|listings| environment:
+    \begin{lstlisting}[language=C++]
+        void sort(int *array, int n) {
+            for(int i = 0; i < n; i++){
+                if(array[i]>array[i+1]{
+					int temp = array[i];
+					array[i+1] = array[i];
+					array[i] = temp;
+				}
+            }
+        }
+    \end{lstlisting}
+
+    % problem 8
+    % --------------------------------------------------------------------------
+    \item {\it }
+    \begin{enumerate}
+        \item
+            %part a
+            correct
+
+        \item
+            %part b
+            compiler error, can't convert int to int*
+
+        \item
+            %part c
+            compiler error: don't convert between double* and int*
+
+        \item
+            %part d
+            correct
+
+        \item
+            %part e
+            correct
+
+        \item
+            %part f
+            correct
+
+        \item
+            %part g
+            compiler error, can't convert int** to int*
+
+        \item
+            %part h
+            correct
+
+        \item
+            %part i
+            logical error: n will end up being the address of p2 (a pointer, which is probably useless)
+
+        \item
+            %part j
+            compiler error, can't convert between double* and int*
+    \end{enumerate}
+
+    % problem 9
+    % --------------------------------------------------------------------------
+    \item {\it }
+    0 2 4 6 8 10 12 14 16 18
+
+\end{enumerate}
+% --------------------------------------------------------------------------
+% --------------------------------------------------------------------------
+% --------------------------------------------------------------------------
+\end{document}
