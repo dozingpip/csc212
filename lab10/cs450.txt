@@ -1,0 +1,43 @@
+assignments in c++ or java (probs go with c++)
+infinite space: real line has every real # vs. finite space (spreading them out)
+
+scientific computing is about approximations, that squiggly equal signs
+May find that the points are close to a line, but not exactly on, as in more approximations
+
+almost never have == with floats, but if you do, have != statement (most difficult statemnt) first
+Usually just use > or <
+
+implement everything in float here, not double so errors are easier to spot
+
+sum(1 to infinity) of 1/k converges in numerical computing because a max value exists in computing (out of the floating point range), but in mathematical series it is actually divergent
+
+numeric computing method:
+	float sum = 0;
+	for(int k= 0; k= Integer.MAX_VALUE; k++)
+	sum+=1f/k
+
+to improve precision change algo, like change it to go from max to min instead of vice versa.
+
+why binary? bc it's simpler to build, cheaper
+
+decimal to binary with like 365.73 works the same, still need a . for when you're less than 1.
+eg. 45.625 = 101101.101
+
+163.3125
+pick the biggest power of two that fits into the number, and subtract it
+163.3125 - 128 = 35.3125 ... - 32 = 3.3125... -2 = 1.3125... - 1 = .3125... -.25 = 0.0625
+= 10100011.0101... have to stop at some point
+
+finite vs infinite expansion:
+1/3  in base ten is 0.333333 forever and it's approx, but it's fine in base 3, 1/3 equals 0.1 in base 3
+
+in fixed point, many irrational numbers stored as approximations, but now fixed point arithmetic has lost interest
+
+float: 32 bits, extra bit added to beginning for the sign
+1 if it's greater than 0, 0 if less than or equal to 0
+
+1.01000110101 *2^7 = 10100011.0101 (in binary)
+1.01*2^(-2) = 0.0101 (base two) = 0.3125 (decimal)
+for first byte it's (a power) + 2^(that power)
+
+to insert a value into a float value, have to Or the value with a blank float with 32 bits (except it's not blank in the spot you want to change)
